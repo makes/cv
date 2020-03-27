@@ -1,10 +1,10 @@
 fullpath := $(shell pwd -P)
 LATEXMK := latexmk -pdf -dvi- -ps- -r ${fullpath}/.latexmkrc
 
-target := klmr-cv
-includes := $(shell ls *.{tex,cls})
+target := klmr-cv-fi
+includes := $('shell ls *.{tex,cls}')
 
-all: ${target} thumbnail
+all: ${target}
 
 push: all
 	git add ${target}.pdf thumbnail.png

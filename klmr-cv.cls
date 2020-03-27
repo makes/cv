@@ -16,6 +16,9 @@
 \RequirePackage{environ}
 \RequirePackage{microtype}
 \RequirePackage{xcolor}
+\RequirePackage{changepage}
+\RequirePackage{dirtytalk}
+%\usepackage[none]{hyphenat}
 
 \newcommand*\email[1]{\gdef\@email{#1}}
 \newcommand*\website[1]{\gdef\@website{#1}}
@@ -54,6 +57,7 @@
     {}% Label
     {0pt}% Sep
     {{%
+        \hspace{0.5ex}%
         \sffamily%
         \Large%
         \addfontfeature{LetterSpace=10}%
@@ -125,6 +129,10 @@
         \vspace{0.02cm}%
         \BODY}}
 
+\geometry{a4paper, vmargin=0.75cm, left=7.5cm, right=0.75cm, marginparwidth=6cm,
+marginparsep=0.75cm}
+
+\iffalse
 \RenewEnviron{bibliography}{%
     \begingroup
     \renewcommand*\bibitem[5]{%
@@ -137,7 +145,8 @@
             \vspace{0.75ex}}
     \BODY
     \endgroup}
-
+\fi
+    
 \let\cv@enditemize\enditemize
 \renewcommand*\enditemize{\cv@enditemize\vspace{0pt plus 1\baselineskip}}
 
@@ -151,29 +160,50 @@ marginparsep=0.75cm}
 
 \defaultfontfeatures{Mapping=tex-text}
 
+%\setmainfont[
+%    UprightFont={* Light},
+%    BoldFont={* Medium},
+%    ItalicFont={* Light Italic},
+%    BoldItalicFont={* Medium Italic},
+%]{Arial}
+
+%\setmainfont[
+%    UprightFont={* 45 Light},
+%    BoldFont={* 65 Medium},
+%    ItalicFont={* 46 Light Italic},
+%    BoldItalicFont={* 66 Medium Italic},
+%]{Helvetica Neue LT Pro}
+
 \setmainfont[
-    UprightFont={* Light},
-    BoldFont={* Medium},
-    ItalicFont={* Light Italic},
-    BoldItalicFont={* Medium Italic},
-]{Helvetica Neue}
+    UprightFont={*-Lt},
+    BoldFont={*-Md},
+    ItalicFont={*-LtIt},
+    BoldItalicFont={*-MdIt},
+]{HelveticaNeueLTPro}
+
+%\setsansfont[
+%    UprightFont={* Ultra Light},
+%    BoldFont={* Medium},
+%    ItalicFont={* Ultra Light Italic},
+%    BoldItalicFont={* Medium Italic},
+%]{Arial}
+
+%\setsansfont[
+%    UprightFont={* 25 Ultra Light},
+%    BoldFont={* 65 Medium},
+%    ItalicFont={* 26 Ultra Light Italic},
+%    BoldItalicFont={* 66 Medium Italic},
+%]{Helvetica Neue LT Pro}
 
 \setsansfont[
-    UprightFont={* UltraLight},
-    BoldFont={*},
-    ItalicFont={* UltraLight Italic},
-    BoldItalicFont={* Italic},
-]{Helvetica Neue}
+    UprightFont={*-Lt},
+    BoldFont={*-Md},
+    ItalicFont={*-LtIt},
+    BoldItalicFont={*-MdIt},
+]{HelveticaNeueLTPro}
 
 \let\old@amp\&
-\renewcommand*\&{{\fontspec{Yanone Kaffeesatz Thin}\old@amp}}
-
-\let\old@sffamily\sffamily
-\renewcommand\sffamily{%
-    \begingroup
-    \renewcommand\&{{\fontspec{Yanone Kaffeesatz Light}\old@amp}}
-    \old@sffamily%
-    \endgroup}
+\renewcommand*\&{{\fontspec{YanoneKaffeesatz-Thin}\old@amp}}
 
 \setlist{nosep, leftmargin=*}
 
