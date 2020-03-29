@@ -3,11 +3,17 @@
 Compile using
 
 ```bash
-make
+./build.sh
 ```
 
 [![](thumbnail.png)](klmr-cv.pdf)
 
+## Requires
+
+`texlive-xetex`
+`latexmk`
+`pdftk`
+ 
 ## License
 
 Licensed under [CC0][]. Feel free to reuse and remix.
